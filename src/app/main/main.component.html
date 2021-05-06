@@ -1,0 +1,18 @@
+<div class="input-container">
+    <input id="searchBox" type="text" #username [(ngModel)]="userName" placeholder="Enter username to search" />
+    <button id="btn" (click)="searchUser()">Search</button>
+</div>
+<h3 *ngIf="displayCount">Total users with name {{userName}} are {{usersCount}}</h3>
+<ul class="circle">
+    <li *ngFor="let user of usersDetails">
+        <a class="user" [routerLink]="['user',user.login]">
+            {{user.login}}
+        </a>
+
+    </li>
+</ul>
+<div id="divChart">
+    <canvas id="myChart">
+
+    </canvas>
+</div>
